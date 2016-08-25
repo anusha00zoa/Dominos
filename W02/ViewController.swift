@@ -11,6 +11,10 @@ import UIKit
 class ViewController: UIViewController
 {
     @IBOutlet weak var totalTextField: UITextField!
+    
+    var historyArray: [Int] = [0, 0, 0, 0, 0]
+    var dominoSum = 0
+    var
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +26,12 @@ class ViewController: UIViewController
         // Dispose of any resources that can be recreated.
     }
     
+    func UpdateSum(count: Int)
+    {
+        dominoSum += count
+        totalTextField.text = String(dominoSum)
+        historyArray.append(dominoSum)
+    }
     
     @IBAction func UndoSum(_ sender: AnyObject) {
     }
@@ -29,16 +39,24 @@ class ViewController: UIViewController
     @IBAction func ClearAll(_ sender: AnyObject) {
     }
 
-    @IBAction func AddOne(_ sender: AnyObject) {
+    @IBAction func AddOne(_ sender: AnyObject)
+    {
+        UpdateSum(count: 1)
     }
 
-    @IBAction func AddTwo(_ sender: AnyObject) {
+    @IBAction func AddTwo(_ sender: AnyObject)
+    {
+        UpdateSum(count: 2)
     }
     
-    @IBAction func AddThree(_ sender: AnyObject) {
+    @IBAction func AddThree(_ sender: AnyObject)
+    {
+        UpdateSum(count: 3)
     }
     
-    @IBAction func AddFour(_ sender: AnyObject) {
+    @IBAction func AddFour(_ sender: AnyObject)
+    {
+        UpdateSum(count: 4)
     }
     
     @IBAction func AddFive(_ sender: AnyObject) {
