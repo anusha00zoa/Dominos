@@ -1,2 +1,2 @@
 # Dominos
-An implementation of the basic using domino images.
+An implementation of the basic calculator using domino images.
